@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fiesta de Halloween</title>
+    <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lakki Reddy', cursive;
+            text-align: center;
+            background-size: auto; 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: black;
+            background-image: url(images/fondo.png);
+        }
+        h1 {border:2px solid orange;
+            display:inline;
+            padding:1px 15px 3px 15px;
+            border-radius: 20%;
+            background-color: transparent;
+            color: chocolate;
+            cursor: pointer;
+        }
+        #texto {
+            width: 300px;
+            background-color: rgba(187,144,5,0,438);
+            text-align: center;
+            margin: 0px auto;
+        }
+        .capa_texto {
+            margin: 0px auto;
+            margin-top: 10px ;
+            background-color: #ffffff50;
+            width: 370px;
+        }
+        .left {
+            float: left;
+        }
+        .gansos {
+            padding-top: 10px;
+        }
+        .espacioD10{
+            margin-right: 10px;
+        }
+        .espacioI10{
+            margin-left: 250px;
+        }
+        .ganso {
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="texto"></div>
+
+    </div>
+
+    <h1 onclick="mostrar(0);">Fiesta de Halloween</h1>
+    <br>
+    
+        <div class="capa_texto">
+            <strong>¿Listo para graznar y disfrutar toda la <br>
+            noche con vampiros, espíritus y (lo más importante) GANSOS bajo la <br> 
+            luz de la luna de halloween? Recuerda no tocarlos.</strong>
+        </div>
+
+
+    <div class="gansos">
+        <div >
+            <img src="images/ganso.png" class="ganso" onclick="mostrar(1);"></img>
+        </div>
+        <div class="left espacioD10 espacioI10">
+            <img src="images/ganso.png" class="ganso" onclick="mostrar(2);"></img>
+        </div>
+        <div class="left espacioD10">
+            <img src="images/ganso.png" class="ganso" onclick="mostrar(3);"></img>
+        </div>
+        <div class="left">
+            <img src="images/ganso.png" class="ganso" onclick="mostrar(4);"></img>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <div id="imagen1" style="display: none;" class="img_oculta">
+        <img src="images/mangle.gif" width="300px">
+    </div>
+
+    <div id="imagen2" style="display: none;" class="img_oculta">
+        <img src="images/bonnie.gif" width="300px">
+    </div>
+
+    <div id="imagen3" style="display: none;" class="img_oculta">
+        <img src="images/foxy.gif" width="300px">
+    </div>
+
+    <div id="imagen4" style="display: none;" class="img_oculta">
+        <img src="images/ganso-cuidado.png" width="300px">
+    </div>
+
+
+</div>
+    <audio id="audio1" controls style="display: none;">
+        <source type="audio/mp3" src="resources/FyM.mp3">
+        </audio>
+    <audio id="audio2" controls style="display: none;">
+        <source type="audio/mp3" src="resources/bonnieScream.mp3">
+         </audio>
+    <audio id="audio3" controls style="display: none;">
+        <source type="audio/mp3" src="resources/FyM.mp3">
+        </audio>
+    <audio id="audio4" controls style="display: none;">
+        <source type="audio/mp3" src="resources/Honk3.mp3">
+        </audio>
+
+
+<script>
+    function mostrar(num) {
+        var imgs= document.getElementsByClassName('img_oculta');
+
+        for (imagen of imgs) {
+            imagen.style.display = "none";
+        }
+
+        if (num != 0) {
+
+            var img= document.getElementById('imagen'+ num);
+            img.style.display = "block"; 
+
+            var sonido= document.getElementById('audio' + num);
+            sonido.play();
+        }
+        
+    }
+</script>
+</body>
+</html>
